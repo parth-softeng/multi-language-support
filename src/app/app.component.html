@@ -1,0 +1,61 @@
+<div class="container">
+  <header class="header">
+    <h1>{{ 'TITLE' | translate }}</h1>
+    <div class="language-selector">
+      <label for="languageSelect">{{ 'SELECT_LANGUAGE' | translate }}: </label>
+      <select id="languageSelect" [(ngModel)]="currentLanguage" (change)="switchLanguage(currentLanguage)" class="language-dropdown">
+        <option *ngFor="let lang of languages" [value]="lang.code">
+          {{ lang.name }}
+        </option>
+      </select>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="welcome-section">
+      <h2>{{ 'WELCOME' | translate }}</h2>
+      <p class="greeting">{{ 'HELLO' | translate }}</p>
+      <p class="description">{{ 'DESCRIPTION' | translate }}</p>
+    </div>
+
+    <div class="features-section">
+      <div class="feature-card">
+        <h3>{{ 'HOME' | translate }}</h3>
+        <p>{{ 'INFO' | translate }}</p>
+      </div>
+      <div class="feature-card">
+        <h3>{{ 'ABOUT' | translate }}</h3>
+        <p>{{ 'INFO' | translate }}</p>
+      </div>
+      <div class="feature-card">
+        <h3>{{ 'CONTACT' | translate }}</h3>
+        <p>{{ 'INFO' | translate }}</p>
+      </div>
+    </div>
+
+    <div class="actions-section">
+      <button class="btn btn-primary">{{ 'SUBMIT' | translate }}</button>
+      <button class="btn btn-secondary">{{ 'CANCEL' | translate }}</button>
+      <button class="btn btn-success">{{ 'SAVE' | translate }}</button>
+      <button class="btn btn-danger">{{ 'DELETE' | translate }}</button>
+    </div>
+
+    <div class="form-section">
+      <h3>{{ 'SETTINGS' | translate }}</h3>
+      <div class="form-group">
+        <label>{{ 'USERNAME' | translate }}:</label>
+        <input type="text" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label>{{ 'EMAIL' | translate }}:</label>
+        <input type="email" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label>{{ 'PHONE' | translate }}:</label>
+        <input type="tel" class="form-control" />
+      </div>
+    </div>
+  </main>
+
+  <router-outlet />
+</div>
